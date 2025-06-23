@@ -21,3 +21,23 @@ app.use(
     sameSite: "lax",
   })
 );
+
+app.use(
+  cors({
+    origin: config.FRONTEND_ORIGIN,
+    credentials: true,
+  })
+);
+
+app.get(
+  `/`,
+   (req: Request, res: Response, next: NextFunction) => {
+        res.status(200).json({
+            message: "Hello World!",
+        })
+  })
+
+
+app.listen(config.PORT, () => {
+  console.log(`Server listening on port ${config.PORT} in ${config.NODE_ENV}`);
+});
