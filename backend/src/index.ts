@@ -12,6 +12,8 @@ import { HTTPSTATUS } from "./config/http.config";
 import { asyncHandler } from "./middlewares/asyncHandler.middleware";
 import authRoutes from "./routes/auth.route";
 
+import "./config/passport.config";
+
 const app = express();
 const BASE_PATH = config.BASE_PATH;
 
